@@ -1,6 +1,11 @@
 import java.util.*;
 public class ClassObjects {
     public static void main(String[] args){
+
+        Student student = new Student();
+        student.setStudentName("Aditi Tiwari");
+        student.setStudentTechnology("java");
+        System.out.println(student.getStudentName()+ student.getStudentTechnology);
     
     // Trainer trainer = new Trainer();
     // System.out.println("Enter the trainer name");
@@ -26,5 +31,21 @@ static String ConcatName(String fname, String lname){
 class Student{
     String studentName;
     String studentTechnology;
+    public String getStudentName() {
+        return studentName;
+    }
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+    public String getStudentTechnology() {
+        return studentTechnology;
+    }
+    public void setStudentTechnology(String studentTechnology) {
+        this.studentTechnology = studentTechnology;
+    }
 }
+}
+
+String nameConcatString(String fname, String mname, String lname){
+    return fname + mname + lname ;
 }
