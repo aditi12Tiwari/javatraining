@@ -4,14 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.*;
 
 import javax.swing.*;
 
 public class ExpenseCalculator {
    public static void main(String[] args){
     //Expense calculator
+    Connection conn;
     JFrame frame = new JFrame("Expense Calculator");
-    Connection conn ;
+
 
     JLabel todayExpensLabel = new JLabel("Expenses : ");
     todayExpensLabel.setBounds(190,20,120,50);
@@ -88,7 +90,7 @@ public class ExpenseCalculator {
                 PreparedStatement statement = conn.prepareStatement(insert_data);
                 statement.setString(1,expense_type);
                 statement.setInt(2,expense_amount);
-                statement.setInt(3,Integer.parseInt(income_field.getText()));
+                statement.setInt(3,Integer.parseInt(income_amount.getText()));
 
             } catch (SQLException exception){
                 throw new RuntimeException(exception);
